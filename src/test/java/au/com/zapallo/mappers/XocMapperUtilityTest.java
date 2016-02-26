@@ -1,5 +1,6 @@
 package au.com.zapallo.mappers;
 
+import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -40,10 +41,15 @@ public class XocMapperUtilityTest {
         ArrayList<String> inObj = new ArrayList<String>();
         ArrayList<String> outObj = new ArrayList<String>();
 
-        inObj.add(0, "Hello");
-        FooTestClass c1 = FooTestClass.CASE1;
-        c1.mapTo(inObj, outObj);
-        assertThat(outObj.get(0), is("Hello"));
+        try {
+            inObj.add(0, "Hello");
+            FooTestClass c1 = FooTestClass.CASE1;
+            c1.mapTo(inObj, outObj);
+            assertThat(outObj.get(0), is("Hello"));
+        }
+        catch (Exception e) {
+            fail("exception was thrown");
+        }
     }
 
     @Test

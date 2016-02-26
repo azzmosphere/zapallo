@@ -13,6 +13,8 @@ public class XocMapperUtility<T, K, U extends XocMapperInterface> {
     private final int MAP_TO   = 0;
     private final int MAP_FROM = 1;
 
+
+
     /**
      * Creates a instance of the mapper utility. The enumerated mapper is
      * expected to be the first argument.
@@ -35,11 +37,13 @@ public class XocMapperUtility<T, K, U extends XocMapperInterface> {
      * @param outObj
      */
 
-    //TODO: Start worrying about what how to handle the exceptions.
     public final void mapTo(T inObj, K outObj) throws XocMappingException {
         performMapping(inObj, outObj, MAP_TO);
     }
 
+    /*
+     * Performs the mapping.
+     */
     private void performMapping(T inObj, K outObj, int direction) throws XocMappingException {
         try {
             Method m = mapper.getClass().getMethod("values");

@@ -57,7 +57,10 @@
 
     <module name="MethodLength"/>
 
-    <module name="MethodName"/>
+    <module name="MethodName">
+      <property name="format" value="^[a-z][a-zA-Z0-9\_]*[a-zA-Z0-9\_]$"/>
+    </module>
+
     <module name="MethodParamPad"/>
     <module name="ModifierOrder"/>
     <module name="NeedBraces"/>
@@ -139,4 +142,5 @@
         <property name="onCommentFormat" value="CHECKSON\: ([\w\|]+)"/>
         <property name="checkFormat" value="$1"/>
     </module>
+
 </module>
