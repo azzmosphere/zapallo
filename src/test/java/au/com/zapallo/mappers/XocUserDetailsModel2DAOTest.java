@@ -35,7 +35,7 @@ public class XocUserDetailsModel2DAOTest {
             xocSecUserDetails.setMdate(nowDate);
             xocSecUserDetails.setLocale(new Locale.Builder().setLanguage("EN").setRegion("AU").build());
             xocSecUserDetails.setEmail_address(new InternetAddress("aaron@example.com"));
-            xocSecUserDetails.setAccount_state(XocSecUserDetailsStates.ACCOUNT_ACTIVE);
+            xocSecUserDetails.setAccount_state(new XocSecUserDetailsStates(1, "ACTIVE"));
             xocSecUserDetails.setLongitude_cord("35.89421911");
             xocSecUserDetails.setLatitude_cord("139.94637467");
 

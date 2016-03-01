@@ -12,7 +12,7 @@ import java.util.HashMap;
 /**
  * Created by aaron.spiteri on 22/02/2016.
  */
-public class XocSecUserDetails implements UserDetails {
+public class XocSecUserDetails implements UserDetails, XocSecPermsInterface {
     private Long account_id;
     private String username;
     private String encrypted_password;
@@ -24,6 +24,7 @@ public class XocSecUserDetails implements UserDetails {
     private String longitude_cord;
     private String latitude_cord;
     private Collection<? extends GrantedAuthority> grantedAuthorities;
+    private final XocSecPermsBase xocSecPermsBase = new XocSecPermsBase();
 
     public static final String KEY_ACCOUNT_EXPIRED = "account_expired";
     public static final String KEY_ACCOUNT_LOCKED = "account_locked";
@@ -31,7 +32,6 @@ public class XocSecUserDetails implements UserDetails {
     public static final String KEY_ENABLED = "enabled";
 
     // Account truth attrbutes
-    private HashMap<String, Boolean> isPermitted = new HashMap<>();
     private HashMap<String, String>  accountAttributes = new HashMap<>();
 
     @Override
@@ -148,24 +148,21 @@ public class XocSecUserDetails implements UserDetails {
         return longitude_cord;
     }
 
-    public void setIsPermitted(String right, Boolean value) {
-        isPermitted.put(right, value);
-    }
-
-    public Boolean isPermitted(String right) {
-        Boolean rv = false;
-        if (isPermitted.containsKey(right)) {
-            rv = isPermitted.get(right);
-        }
-
-        return rv;
-    }
-
     public void setAccountAttributes(String key, String attr) {
         accountAttributes.put(key, attr);
     }
 
     public Object getAccountAttribute(String key) {
         return accountAttributes.get(key);
+    }
+
+    @Override
+    public Boolean isPermitted(String right) {
+        return xocSecPermsBase.isPermitted(right);
+    }
+
+    @Override
+    public void setIsPermitted(String right, Boolean value) {
+        xocSecPermsBase.setIsPermitted(right, value);
     }
 }

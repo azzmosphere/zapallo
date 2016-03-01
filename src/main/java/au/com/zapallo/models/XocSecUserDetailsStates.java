@@ -3,54 +3,28 @@ package au.com.zapallo.models;
 /**
  * Created by aaron.spiteri on 22/02/2016.
  */
-public enum XocSecUserDetailsStates {
-    /**
-     * Account is pending deletion.
-     */
-    ACCOUNT_DELETED,
+public class XocSecUserDetailsStates {
+    private long userDetailsStateId;
+    private String stateName;
 
-    /**
-     * Locked pending a modification.
-     */
-    ACCOUNT_LOCKED,
+    public long getUserDetailsStateId() {
+        return userDetailsStateId;
+    }
 
-    /**
-     * Account has been suspended by a administrator
-     */
-    ACCOUNT_SYSTEM_SUSPENDED,
+    public void setUserDetailsStateId(long userDetailsStateId) {
+        this.userDetailsStateId = userDetailsStateId;
+    }
 
-    /**
-     * Disabled at user request
-     */
-    ACCOUNT_USER_DISABLED,
+    public String getStateName() {
+        return stateName;
+    }
 
-    /**
-     * Disabled at the by admin
-     */
-    ACCOUNT_SYSTEM_DISABLED,
+    public void setStateName(String stateName) {
+        this.stateName = stateName;
+    }
 
-    /**
-     * Pending activation
-     */
-    ACCOUNT_PENDING,
-
-    /**
-     * Active.
-     */
-    ACCOUNT_ACTIVE,
-
-    /**
-     * Needs verification before active
-     */
-    ACCOUNT_PENDING_VERIFICATION,
-
-    /**
-     * Expired due to inactivity
-     */
-    ACCOUNT_EXPIRED,
-
-    /**
-     * Creditials have expired.
-     */
-    ACCOUNT_CREDITIALS_EXPIRED;
+    public XocSecUserDetailsStates(long userDetailsStateId, String stateName) {
+        this.userDetailsStateId = userDetailsStateId;
+        this.stateName = stateName;
+    }
 }
