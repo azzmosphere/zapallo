@@ -5,6 +5,8 @@ package au.com.zapallo.models;
  */
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.util.comparator.BooleanComparator;
+
 import java.io.Serializable;
 
 public class XocSecGrantedAuthority implements GrantedAuthority, Serializable, XocSecPermsInterface {
@@ -28,5 +30,9 @@ public class XocSecGrantedAuthority implements GrantedAuthority, Serializable, X
     @Override
     public void setIsPermitted(String right, Boolean value) {
         xocSecPermsBase.setIsPermitted(right, value);
+    }
+
+    public Boolean hasPermission(String right) {
+        return xocSecPermsBase.hasPermission(right);
     }
 }

@@ -23,6 +23,13 @@ dependencies {
     compile 'javax.mail:javax.mail-api:1.5.5'
     compile 'com.sun.mail:javax.mail:1.5.5'
     compile 'javax.persistence:persistence-api:1.0-rev-1'
+    compile 'org.springframework.data:spring-data-jpa:1.9.2.RELEASE'
+
+    compile 'org.drools:drools-core:6.3.0.Final'
+    compile 'org.drools:drools-compiler:6.3.0.Final'
+    compile 'org.drools:knowledge-api:5.5.0.Final'
+    compile 'org.drools:drools-spring:5.6.0.Final'
+    compile 'org.kie:kie-api:6.3.0.Final'
 
     // Compile using common logic.
     compile ('org.springframework:spring-webmvc:4.2.3.RELEASE') {

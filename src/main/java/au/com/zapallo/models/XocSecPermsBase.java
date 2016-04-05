@@ -23,4 +23,8 @@ public class XocSecPermsBase implements XocSecPermsInterface {
 
         return rv;
     }
+
+    public Boolean hasPermission(String right) {
+        return isPermitted.containsKey(right);
+    }
 }

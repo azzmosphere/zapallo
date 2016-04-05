@@ -8,6 +8,7 @@
 
   <property name="severity" value="error"/>
 
+
 	<!-- module name="StrictDuplicateCode">
    		<property name="min" value="10"/>
 	    <property name="severity" value="warning"/>
@@ -57,9 +58,10 @@
 
     <module name="MethodLength"/>
 
-    <module name="MethodName">
-      <property name="format" value="^[a-z][a-zA-Z0-9\_]*[a-zA-Z0-9\_]$"/>
-    </module>
+    <module name="MethodName" />
+    <!--<module name="MethodName">-->
+      <!--<property name="format" value="^[a-z][a-zA-Z0-9\_]*[a-zA-Z0-9\_]$"/>-->
+    <!--</module>-->
 
     <module name="MethodParamPad"/>
     <module name="ModifierOrder"/>

@@ -55,11 +55,11 @@ public class XocSecUserDetailsDAO implements Serializable {
     @Column(name = "latitude_cord", insertable = true, updatable = true, unique = false, nullable = true)
     private String latitude_cord;
 
-    public Long getAccount_id() {
+    public Long getAccountId() {
         return account_id;
     }
 
-    public void setAccount_id(Long account_id) {
+    public void setAccountId(Long account_id) {
         this.account_id = account_id;
     }
 
@@ -71,11 +71,11 @@ public class XocSecUserDetailsDAO implements Serializable {
         this.username = username;
     }
 
-    public String getEncrypted_password() {
+    public String getEncryptedPassword() {
         return encrypted_password;
     }
 
-    public void setEncrypted_password(String encrypted_password) {
+    public void setEncryptedPassword(String encrypted_password) {
         this.encrypted_password = encrypted_password;
     }
 
@@ -103,36 +103,36 @@ public class XocSecUserDetailsDAO implements Serializable {
         this.locale = locale;
     }
 
-    public InternetAddress getEmail_address() {
+    public InternetAddress getEmailAddress() {
         return email_address;
     }
 
-    public void setEmail_address(InternetAddress email_address) {
+    public void setEmailAddress(InternetAddress email_address) {
 
         this.email_address = email_address;
     }
 
-    public XocSecUserDetailsStates getAccount_state() {
+    public XocSecUserDetailsStates getAccountState() {
         return account_state;
     }
 
-    public void setAccount_state(XocSecUserDetailsStates account_state) {
+    public void setAccountState(XocSecUserDetailsStates account_state) {
         this.account_state = account_state;
     }
 
-    public String getLongitude_cord() {
+    public String getLongitudeCord() {
         return longitude_cord;
     }
 
-    public void setLongitude_cord(String longitude_cord) {
+    public void setLongitudeCord(String longitude_cord) {
         this.longitude_cord = longitude_cord;
     }
 
-    public String getLatitude_cord() {
+    public String getLatitudeCord() {
         return latitude_cord;
     }
 
-    public void setLatitude_cord(String latitude_cord) {
+    public void setLatitudeCord(String latitude_cord) {
         this.latitude_cord = latitude_cord;
     }
 }

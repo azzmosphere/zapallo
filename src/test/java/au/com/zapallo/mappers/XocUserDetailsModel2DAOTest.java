@@ -28,20 +28,20 @@ public class XocUserDetailsModel2DAOTest {
             XocMapperUtility<XocSecUserDetails, XocSecUserDetailsDAO, XocUserDetailsModel2DAO>
                     xocMapperUtility = new XocMapperUtility<>(XocUserDetailsModel2DAO.ACCOUNT_ID);
 
-            xocSecUserDetails.setAccount_id(112L);
+            xocSecUserDetails.setAccountId(112L);
             xocSecUserDetails.setUsername("foobar");
-            xocSecUserDetails.setEncrypted_password("XYZ");
+            xocSecUserDetails.setEncryptedPassword("XYZ");
             xocSecUserDetails.setCdate(nowDate);
             xocSecUserDetails.setMdate(nowDate);
             xocSecUserDetails.setLocale(new Locale.Builder().setLanguage("EN").setRegion("AU").build());
-            xocSecUserDetails.setEmail_address(new InternetAddress("aaron@example.com"));
-            xocSecUserDetails.setAccount_state(new XocSecUserDetailsStates(1, "ACTIVE"));
-            xocSecUserDetails.setLongitude_cord("35.89421911");
-            xocSecUserDetails.setLatitude_cord("139.94637467");
+            xocSecUserDetails.setEmailAddress(new InternetAddress("aaron@example.com"));
+            xocSecUserDetails.setAccountState(new XocSecUserDetailsStates(1, "ACTIVE"));
+            xocSecUserDetails.setLongitudeCord("35.89421911");
+            xocSecUserDetails.setLatitudeCord("139.94637467");
 
             xocMapperUtility.mapTo(xocSecUserDetails, xocSecUserDetailsDAO);
 
-            assertThat(xocSecUserDetailsDAO.getAccount_id(), is(xocSecUserDetails.getAccount_id()));
+            assertThat(xocSecUserDetailsDAO.getAccountId(), is(xocSecUserDetails.getAccountId()));
 
         }
         catch (Exception e) {

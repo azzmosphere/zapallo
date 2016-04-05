@@ -9,16 +9,16 @@ import au.com.zapallo.repositories.dao.XocSecUserDetailsDAO;
  * Created by aaron.spiteri on 23/02/2016.
  */
 public enum  XocUserDetailsModel2DAO implements XocMapperInterface<XocSecUserDetails, XocSecUserDetailsDAO> {
-    ACCOUNT_ID("setAccount_id", "getAccount_id"),
+    ACCOUNT_ID("setAccountId", "getAccountId"),
     USERNAME("setUsername", "getUsername"),
-    ENCRYPTED_PASSWORD("setEncrypted_password", "getEncrypted_password"),
+    ENCRYPTED_PASSWORD("setEncryptedPassword", "getEncryptedPassword"),
     CDATE("setCdate", "getCdate"),
     MDATE ("setMdate", "getMdate"),
     LOCALE("setLocale", "getLocale"),
-    EMAIL_ADDRESS("setEmail_address", "getEmail_address"),
-    ACCOUNT_STATE("setAccount_state", "getAccount_state"),
-    LONGITUDE_CORD("setLongitude_cord", "getLongitude_cord"),
-    LATITUDE_CORD("setLatitude_cord", "getLatitude_cord");
+    EMAIL_ADDRESS("setEmailAddress", "getEmailAddress"),
+    ACCOUNT_STATE("setAccountState", "getAccountState"),
+    LONGITUDE_CORD("setLongitudeCord", "getLongitudeCord"),
+    LATITUDE_CORD("setLatitudeCord", "getLatitudeCord");
 
     protected XocMapperHelper<XocSecUserDetails, XocSecUserDetailsDAO> helper;
     private String methodSet;
